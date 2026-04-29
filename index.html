@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSys AI — Information Management Expert System</title>
+    <meta name="description" content="An intelligent expert system for recommending information management systems (ERP, CRM, DMS) using rule-based inference.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <div class="logo" id="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 4L36 12V28L20 36L4 28V12L20 4Z" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+                        <path d="M20 10L30 16V26L20 32L10 26V16L20 10Z" fill="url(#logoGrad)" opacity="0.3"/>
+                        <circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#3a86ff"/>
+                                <stop offset="100%" stop-color="#8338ec"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">InfoSys</span>
+                    <span class="logo-tag">AI</span>
+                </div>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="#" class="nav-link active" data-section="home" id="nav-home">Home</a>
+                <a href="#" class="nav-link" data-section="diagnose" id="nav-diagnose">Analyze Needs</a>
+                <a href="#" class="nav-link" data-section="knowledge" id="nav-knowledge">Knowledge Base</a>
+                <a href="#" class="nav-link" data-section="about" id="nav-about">About</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        
+        <!-- Home Section -->
+        <section class="section section-home active" id="section-home">
+            <div class="hero">
+                <div class="hero-badge" id="hero-badge">
+                    <span class="pulse-dot"></span>
+                    IMS Expert System v3.0
+                </div>
+                <h1 class="hero-title" id="hero-title">
+                    Intelligent Information<br>
+                    <span class="gradient-text">Management Expert</span>
+                </h1>
+                <p class="hero-subtitle" id="hero-subtitle">
+                    Finding the right software for your business shouldn't be a guessing game. 
+                    Our expert system analyzes your operational needs and technical requirements 
+                    to recommend the perfect Information Management System.
+                </p>
+                <div class="hero-actions" id="hero-actions">
+                    <button class="btn btn-primary btn-lg" id="btn-start-diagnosis" onclick="navigateTo('diagnose')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        Analyze My Business
+                    </button>
+                    <button class="btn btn-ghost btn-lg" id="btn-view-kb" onclick="navigateTo('knowledge')">
+                        Browse Systems
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid" id="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-1">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-diseases">10+</div>
+                        <div class="stat-label">System Types</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-2">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-rules">40+</div>
+                        <div class="stat-label">Logic Rules</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-3">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-symptoms">35+</div>
+                        <div class="stat-label">Requirements</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-4">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-speed">Precision</div>
+                        <div class="stat-label">Inference</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="how-it-works" id="how-it-works">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                            </svg>
+                        </div>
+                        <h3>Select Requirements</h3>
+                        <p>Identify your business operations, technical needs, and current data management issues.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <h3>Logic Processing</h3>
+                        <p>Our engine matches your needs against industry-standard Information Management architectures.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                        </div>
+                        <h3>Get Recommendation</h3>
+                        <p>Receive a weighted recommendation for the best-fit system (ERP, CRM, DMS, etc.) with implementation tips.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simplify Analyze Section (Wizard Mode) -->
+        <section class="section section-diagnose" id="section-diagnose">
+            <div class="wizard-container">
+                <div class="wizard-header">
+                    <h2 class="section-title">Solution Finder</h2>
+                    <p class="section-subtitle">Answer a few simple questions to find your perfect system</p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="wizard-progress">
+                        <div class="progress-track">
+                            <div class="progress-fill" id="wizard-progress-fill" style="width: 25%"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="prog-step active" data-step="1">1</div>
+                            <div class="prog-step" data-step="2">2</div>
+                            <div class="prog-step" data-step="3">3</div>
+                            <div class="prog-step" data-step="4">4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-content" id="wizard-content">
+                    <!-- Step 1: Business Operations -->
+                    <div class="wizard-step active" id="step-1">
+                        <div class="step-info">
+                            <span class="step-label">Step 1 of 4</span>
+                            <h3>What business areas do you need to manage?</h3>
+                            <p>Select all that apply to your core operations.</p>
+                        </div>
+                        <div class="wizard-options" id="options-operations">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Customer & Sales -->
+                    <div class="wizard-step" id="step-2">
+                        <div class="step-info">
+                            <span class="step-label">Step 2 of 4</span>
+                            <h3>How do you interact with customers?</h3>
+                            <p>Select the features your sales and support teams need.</p>
+                        </div>
+                        <div class="wizard-options" id="options-customer">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Current Problems -->
+                    <div class="wizard-step" id="step-3">
+                        <div class="step-info">
+                            <span class="step-label">Step 3 of 4</span>
+                            <h3>What problems are you facing right now?</h3>
+                            <p>Identifying your "pain points" helps us find the right fix.</p>
+                        </div>
+                        <div class="wizard-options" id="options-data_issues">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Technical Preferences -->
+                    <div class="wizard-step" id="step-4">
+                        <div class="step-info">
+                            <span class="step-label">Step 4 of 4</span>
+                            <h3>Any technical preferences?</h3>
+                            <p>How would you like the system to be delivered?</p>
+                        </div>
+                        <div class="wizard-options" id="options-tech_pref">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wizard Navigation -->
+                <div class="wizard-nav">
+                    <button class="btn btn-ghost" id="btn-wizard-prev" onclick="moveWizard(-1)" disabled>
+                        Back
+                    </button>
+                    <button class="btn btn-primary" id="btn-wizard-next" onclick="moveWizard(1)">
+                        Next Step
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-primary" id="btn-wizard-finish" onclick="runDiagnosis()" style="display:none;">
+                        Get Recommendation
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <!-- Selected Chips -->
+                <div class="selected-symptoms-bar" id="selected-symptoms-bar" style="display:none;">
+                    <div class="selected-label">Selected:</div>
+                    <div class="selected-chips" id="selected-chips"></div>
+                    <button class="btn btn-sm btn-ghost" id="btn-clear-all" onclick="clearAllSymptoms()">Clear All</button>
+                </div>
+
+                <!-- Action -->
+                <div class="diagnose-actions" id="diagnose-actions">
+                    <button class="btn btn-primary btn-lg btn-diagnose" id="btn-run-diagnosis" onclick="runDiagnosis()" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        Analyze System Fit
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <!-- Results -->
+                <div class="results-container" id="results-container" style="display:none;">
+                    <div class="results-header">
+                        <h3 class="results-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                                <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                            Recommended Solutions
+                        </h3>
+                        <div class="inference-info" id="inference-info"></div>
+                    </div>
+                    <div class="results-list" id="results-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Base Section -->
+        <section class="section section-knowledge" id="section-knowledge">
+            <div class="knowledge-container">
+                <div class="knowledge-header">
+                    <h2 class="section-title">Knowledge Base</h2>
+                    <p class="section-subtitle">Explore the inference rules and system architectures</p>
+                    <div class="kb-tabs" id="kb-tabs">
+                        <button class="kb-tab active" data-tab="diseases" id="kb-tab-diseases">Systems</button>
+                        <button class="kb-tab" data-tab="rules" id="kb-tab-rules">Rules</button>
+                        <button class="kb-tab" data-tab="architecture" id="kb-tab-architecture">Architecture</button>
+                    </div>
+                </div>
+                <div class="kb-content" id="kb-content">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section section-about" id="section-about">
+            <div class="about-container">
+                <h2 class="section-title">About InfoSys AI</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Domain Modeling</h3>
+                        <p>Our system uses IF-THEN rules to model business logic. Each rule maps business requirements to potential software architectures.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <h3>Forward Chaining</h3>
+                        <p>The inference engine starts with known user requirements and chains through rules to reach the most logical system recommendation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 InfoSys AI — Information Management Expert System</p>
+            <p class="footer-note">Optimizing Business Intelligence through Rule-Based Inference</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Floating Chatbot -->
+    <div class="chatbot-wrapper" id="chatbot-wrapper">
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <span class="status-dot"></span>
+                    InfoSys Assistant
+                </div>
+                <button class="chatbot-close" id="chatbot-close">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot">
+                    Hello! I'm your IMS Consultant. Ask me anything about ERP, CRM, or data management!
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off">
+                <button id="chatbot-send">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+        </button>
+    </div>
+
+    <script src="knowledge-base.js"></script>
+    <script src="inference-engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
